@@ -18,7 +18,7 @@ body {
 }
 
 .image-bg-fluid-height {
-	background: url('http://lorempixel.com/g/1920/500/') no-repeat center center scroll;
+	background: url('../images/Shustrik.jpg') no-repeat center center scroll;
     padding: 100px 0;
 }
 
