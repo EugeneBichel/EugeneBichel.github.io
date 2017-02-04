@@ -61,6 +61,13 @@ gulp.task('build-paintArea-script', function() {
         .pipe(gulp.dest('./dist/app/'));
 });
 
+gulp.task('build-paintArea-tpl', function() {
+    "use strict";
+    return gulp.src('./src/app/components/paintArea/paintArea.tpl.html')
+        .pipe(gulp.dest('./dist/app/'));
+});
+
+
 gulp.task('default', [
     'copy-bootstrap-css',
     'copy-bootstrap-css-map',
@@ -70,4 +77,5 @@ gulp.task('default', [
     'copy-angular',
     'copy-angular-map',
     'build-app-script',
-    'build-paintArea-script']);
+    'build-paintArea-script',
+    'build-paintArea-tpl']);
