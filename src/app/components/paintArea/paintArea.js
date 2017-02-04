@@ -1,13 +1,21 @@
 (function(angular) {
     "use strict";
 
-    function PaintAreaController() {
+    angular.module('MonkeyTricksApp')
+        .directive('paintArea', function() {
+            return {
+                restrict: 'E',
+                scope: {},
+                controller: function($scope, $element) {
 
-    }
-
-    //angular.module('app')
+                },
+                templateUrl: 'paintArea.tpl.html'
+            };
+        });
 
 })(window.angular);
+
+/*
 
 var SimplePainter = (function() {
 
@@ -68,3 +76,4 @@ var SimplePainter = (function() {
 
 var simplePainter = new SimplePainter('paintArea');
 simplePainter.run();
+*/
