@@ -5,7 +5,7 @@
 
     }
 
-    angular.module('app')
+    //angular.module('app')
 
 })(window.angular);
 

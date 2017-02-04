@@ -10,11 +10,9 @@
 
     <title>Monkey tricks</title>
 
-    <link rel="stylesheet" href="src/libs/bootstrap/css/bootstrap.min.css">
-    <link href="src/assets/css/app.css" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-    <script src="./src/app/app.js"></script>
+    <link rel="stylesheet" href="./dist/assets/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/assets/styles/app.css">
+    <script src="dist/angular.min.js"></script>
 </head>
 
 <body ng-app="MonkeyTricksApp">
@@ -57,9 +55,10 @@
     <div class="container">
         <div class="col-lg-6">
             <div ng-controller="MainController as main" layout="column" ng-cloak="">
-                <paintArea>
+                {{main.greeting}}
+                <!--<paintArea>
 
-                </paintArea>
+                </paintArea>-->
             </div>
         </div>
     </div>
@@ -74,9 +73,8 @@
             </div>
         </footer>
 
-    <script src="src/libs/jquery/jquery-3.1.1.min.js"></script>
-    <script src="./src/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+    <script src="./dist/jquery.min.js"></script>
+    <script src="./dist/bootstrap.min.js"></script>
+    <script src="./dist/monkeyTricks.js"></script>
 </body>
 </html>
