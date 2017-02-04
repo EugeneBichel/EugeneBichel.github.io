@@ -9,7 +9,7 @@
                 controller: function($scope, $element) {
 
                 },
-                templateUrl: 'paintArea.tpl.html'
+                templateUrl: './src/app/components/paintArea/paintArea.tpl.html'
             };
         });
 
