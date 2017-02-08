@@ -8,6 +8,7 @@
         .directive('paintArea', function() {
 
             var canvas = null;
+            var btnClearPaintArea = null;
             var isPainting = false;
             var mousePosition = null;
             var canvasContext = null;
@@ -15,7 +16,8 @@
 
             function link(scope, element, attrs) {
 
-                canvas = element[0].childNodes[0];
+                canvas = element[0].querySelector('#paintAreaCanvas');
+                btnClearPaintArea = element[0].querySelector('#btnClearPaintArea');
 
                 canvasContext = canvas.getContext('2d');
 
@@ -31,8 +33,9 @@
 
                 canvasAngularWrapper = angular.element(canvas);
 
-                canvasAngularWrapper.on('mousemove', onMousePosCalculate.bind(this));
-                canvasAngularWrapper.on('mousedown', onStartStopPaint.bind(this));
+                canvasAngularWrapper.on('mousemove', onMousePosCalculate);
+                canvasAngularWrapper.on('mousedown', onStartStopPaint);
+                angular.element(btnClearPaintArea).on('click', onClearPaintArea);
             }
 
             function onStartStopPaint() {
@@ -46,7 +49,7 @@
                 canvasContext.beginPath();
                 canvasContext.moveTo(mousePosition.x, mousePosition.y);
 
-                canvasAngularWrapper.on('mousemove', onPaint.bind(this));
+                canvasAngularWrapper.on('mousemove', onPaint);
             }
 
             function onMousePosCalculate(e) {
@@ -65,6 +68,10 @@
             function onPaint() {
                 canvasContext.lineTo(mousePosition.x, mousePosition.y);
                 canvasContext.stroke();
+            }
+
+            function onClearPaintArea() {
+                canvasContext.clearRect(0, 0, canvas.width, canvas.height);
             }
 
             return {
